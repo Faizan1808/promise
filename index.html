@@ -258,32 +258,33 @@ Output:
 
     <p>Q9. Create examples to explain promise.all function?</p>
 
-    <p>Output: <pre>
-        let promise=new Promise((resolve,reject)=>{
-            let count=10;
-            if(count===10){
-                resolve(count);
-            }
-            else{
-                reject()
-            }
-            
-            })
-            promise
-            .then((count)=>{
-            console.log("promises resolved");
-            })
-            .catch(()=>{
-            console.log("promises rejected");
-            })
-            .finally(()=>{
-            console.log("end of promises");
-            })
+    <pre>
+    Output:
+    let promise1 = new Promise((resolve, reject)=>{
+        resolve("Welcome")
+    });
+    
+    let promise2 = new Promise((resolve, reject)=>{
+        resolve("To")
+    })
+    
+    let promise3 = new Promise((resolve, reject)=>{
+        resolve("Tech")
+    })
+    
+    let promise4 = new Promise((resolve, reject)=>{
+        resolve("World")
+    })
+    
+    Promise.all([promise1, promise2, promise3, promise4])
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    
     </pre>
-    THEN -> if a promise is resolved then it enter into a then function.
-    CATCH -> if a promise is rejected then it enter into a catch function.
-    FINALLY-> if a promise is resolved or rejected then it enter into a catch function
-    </p>
     
     
 
